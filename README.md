@@ -13,7 +13,7 @@ A simple program that allows you to bring up fake windows shutdown/update/restar
 
 ## Note
 
-It's vital to use correct architecture for your machine, due to some winapi limitation and WoW64 redirection.
+It's vital to use correct architecture for your machine. Due to some winapi limitation and WoW64 redirection, x86 emulation will mess up everything.
 
 ## Demo
 
