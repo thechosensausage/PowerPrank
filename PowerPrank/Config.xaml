@@ -1,0 +1,114 @@
+﻿<Window x:Class="PowerPrank.Config"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:uc="clr-namespace:PowerPrank"
+             xmlns:local="clr-namespace:PowerPrank"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="800" Width="800" Height="700" Activated="Window_Activated">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Margin="10" x:Name="spEditKeys">
+            <Label Content="Global Settings:" FontSize="20"/>
+            <Label x:Name="lbMessage" Foreground="#FF68A352" Content=""/>
+            <Label Content="Keys " FontSize="15"></Label>
+
+        </StackPanel>
+        
+        <StackPanel Grid.Column="1" Margin="10">
+
+            <Label Content="Configure Prank:" FontSize="20"/>
+            <StackPanel Orientation="Horizontal">
+
+                <ComboBox x:Name="cbbPrankNames" SelectionChanged="cbbPrankNames_SelectionChanged" Width="130" Margin="10 0"/>
+                <Button Margin="5 0" Content="Add" x:Name="btAddPrank" Click="btAddPrank_Click" Padding="5 3"/>
+                <Button Margin="5 0" Content="Remove" x:Name="btRemovePrank" Padding="5 3" Click="btRemovePrank_Click"/>
+                <Button Margin="5 0" Content="Rename" x:Name="btRenamePrank" Padding="5 3" Click="btRenamePrank_Click"/>
+            </StackPanel>
+            <Label Content="Conditions" FontSize="15"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <CheckBox Grid.Row="0" Grid.Column="0" Content="Validate" x:Name="cbValidateArea"/>
+                <CheckBox Grid.Row="1" Grid.Column="0" Content="Validate" x:Name="cbValidateTitle"/>
+                <CheckBox Grid.Row="2" Grid.Column="0" Content="Validate" x:Name="cbValidatePath"/>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1">
+                    <Label Content="Point 1:"/>
+                    <Label x:Name="lbPoint1"/>
+                    <Label Content="Point 2:"/>
+
+                    <Label x:Name="lbPoint2"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1">
+                    <Label Content="window title:"/>
+                    <Label x:Name="lbTitle"/>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Grid.Row="2" Grid.Column="1">
+
+                    <Label Content="program path:"/>
+
+                    <Label x:Name="lbPath"/>
+                </StackPanel>
+            </Grid>
+            
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Triggered by:"/>
+                <ComboBox Width="150" Margin="3" SelectedIndex="0" x:Name="cbbTriggerType" SelectionChanged="cbbTriggerType_SelectionChanged">
+                    
+                </ComboBox>
+            </StackPanel>
+            <StackPanel x:Name="spKeySetterPlace"/>
+            <StackPanel x:Name="spSetTrigger">
+                <uc:CombinationSetter x:Name="TriggerKeySetter">
+                    
+                </uc:CombinationSetter>
+            </StackPanel>
+            <Button Grid.Column="0" x:Name="btCapture" Click="btCapture_Click" Margin="25 5" Padding="5">Set Condition</Button>
+
+            <Label Content="Apperance" FontSize="15"/>
+            <Label Content="BackColor"/>
+            <TextBox x:Name="tbBackColor" FontSize="15"/>
+
+            <Label Content="Text"/>
+            <TextBox x:Name="tbShutdownText" FontSize="15"/>
+            <Label Content="Behaviour" FontSize="15"/>
+
+            <Label Content="Time"/>
+            <TextBox x:Name="tbShutdownTime" FontSize="15"/>
+            <CheckBox x:Name="cbMoveCusor" Content="Move cursor (suppress click)"/>
+            <CheckBox x:Name="cbSuppressKey" Content="Suppress last key"/>
+            <CheckBox x:Name="cbPressStart" Content="Press Start key"/>
+            <CheckBox x:Name="cbKillProgram" Content="Kill program"/>
+            
+        </StackPanel>
+        <!--#region footers-->
+        <StackPanel Orientation="Horizontal" Grid.Column="0" VerticalAlignment="Bottom">
+            <Button Margin="5 0" Content="Save" Padding="2" x:Name="btSaveGlobal" Click="btSaveGlobal_Click" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+            <Button Margin="5 0" Content="Reset" Padding="2" x:Name="btReset" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="btReset_Click"/>
+            <Button Margin="5 0" Width="50" x:Name="btExit"  Click="btExit_Click" >Exit</Button>
+            <Button Margin="5 0" Width="50" x:Name="btRestart" Click="btRestart_Click"   >Restart</Button>
+            <Button Margin="5 0" Width="50" x:Name="btExport" Click="btExport_Click"   >Export</Button>
+            <Button Margin="5 0" Width="50" x:Name="btImport" Click="btImport_Click"   >Import</Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Bottom">
+            <Button Margin="7 0" Padding="2" Width="100" x:Name="btSave" Click="btSave_Click" Content="Apply/Save"></Button>
+        </StackPanel>
+
+        <!--#endregion-->
+    </Grid>
+</Window>
