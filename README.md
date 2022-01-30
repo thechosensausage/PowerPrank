@@ -19,3 +19,4 @@ It's vital to use correct architecture for your machine, due to some winapi limi
 
 [Demo video on YouTube](https://youtu.be/3LthDNhlnbw)
 
+<a href="https://www.youtube.com/embed/3LthDNhlnbw" target="_blank"><img src="https://user-images.githubusercontent.com/79321826/151691095-7bbd1e16-286d-4222-b930-58a99915e41e.png" alt="Demo video on YouTube"/></a>
