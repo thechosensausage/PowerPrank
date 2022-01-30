@@ -8,6 +8,7 @@ A simple program that allows you to bring up fake windows shutdown/update/restar
 1. GUI configurator.
 1. Supports multiple pranks.
 1. Customizable apperance and behaviours.
+1. Changeable shortcut keys.
 1. Import/Export your settings.
 
 ## Note
